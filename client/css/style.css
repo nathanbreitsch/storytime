@@ -1,0 +1,82 @@
+
+body{
+	overflow:hidden;
+}
+
+#story{
+	float:left;
+	height:450px;
+	width:40%;
+	margin-right:5%;
+	border:groove;
+}
+
+#desk{
+	float:left;
+	height:450px;
+	width:50%;
+
+}
+
+#top{
+	height:100%;
+	list-style:none;
+}
+#top-container{
+	height:60%;
+	overflow-y:scroll;
+	border:groove;
+	margin-bottom:10px;
+}
+
+#submission{
+	height:20%;
+	border:groove;
+}
+
+
+#timer{
+	height:10%;
+	border:groove;
+	text-align:center;
+	padding-bottom:10px;
+	font-size:24px;
+	margin-bottom:10px;
+}
+
+li{
+	margin-top:10px;
+	background-color:rgb(256,0,0);
+}
+
+.buttons{
+	float:left;
+	clear:left;
+	position:relative;
+	top:17px;
+}
+
+.upvote{
+	margin:2px;
+	
+}
+
+.downvote{
+	margin:2px;
+	transform:rotate("90deg");
+}
+
+.score{
+	margin:2px;
+}
+
+.sentence{
+	float:left;
+	width:70%;
+	clear: right;
+	margin-left:20px;
+}
+
+#textbox{
+	margin:5px 5px 0px 5px;
+}
