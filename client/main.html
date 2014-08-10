@@ -25,33 +25,8 @@
     
 </body>
 
-<template name="story">
-    {{#each story}}
-        <p>{{sentence}}</p>
-    {{/each}}
-</template>
 
-<template name="timer">
-    {{time}}
-</template>
 
-<template name="top">
-<div id="top-container">
-    <ul id="top">
-        {{#each sentences}}
-        <li>
-        <div class="buttons">
-            <!--<img src = "./images/arrow.jpeg" class="upvote"/>-->
-            <!--<b class="upvote">^</b>-->
-            <input type="button" value="^" class="upvote"/>
-            <b class="score">{{score}}</b>
-            <!--<b class="downvote">v</b>-->
-            <!--<img src = "./images/arrow.jpeg" class="downvote"/>-->
-            <input type="button" value="v" class="downvote"/>
-        </div>
-        <p class="sentence">{{sentence}}</p>
-        </li>
-        {{/each}}
-    </ul>
-</div>
-</template>
+
+
+
