@@ -1,3 +1,3 @@
-Sentences = new Meteor.Collection("Sentences");
+SubmittedFragments = new Meteor.Collection("SubmittedFragments");
 Votes = new Meteor.Collection("Votes");
-Story = new Meteor.Collection("Story");
+SelectedFragments = new Meteor.Collection("SelectedFragments");

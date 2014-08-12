@@ -20,7 +20,7 @@ Meteor.startup(function() {
             function() {
                 var textbox = document.getElementById("textbox");
                 var sentence = textbox.value;
-                Sentences.insert({"sentence": sentence, "score": 0});
+                SubmittedFragments.insert({"sentence": sentence, "score": 0});
                 textbox.value = "";
             },
         false);

@@ -1,3 +1,3 @@
 Template.story.story = function() {
-    return Story.find({});
+    return SelectedFragments.find({});
 };

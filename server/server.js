@@ -1,4 +1,4 @@
-Sentences.remove({});
+SubmittedFragments.remove({});
 
 Meteor.methods({
     /*
@@ -12,12 +12,12 @@ Meteor.methods({
 		minutes = minutes % 2;
 		seconds = seconds % 60;
 		if(minutes == 1 && seconds == 0) { //yes, 1 for some reason
-			var topSentence = Sentences.findOne({}, {sort: {score: -1}});
+			var topSentence = SubmittedFragments.findOne({}, {sort: {score: -1}});
 		if(minutes == 1 && seconds == 0 && false){//yes, 1 for some reason
-			var topSentence = Sentences.findOne({},{sort:{score:-1}});
+			var topSentence = SubmittedFragments.findOne({},{sort:{score:-1}});
 			console.log(topSentence.sentence);
-			Sentences.remove({});
-			Story.insert({"sentence":topSentence.sentence});
+			SubmittedFragments.remove({});
+			SelectedFragments.insert({"sentence":topSentence.sentence});
 			return "0";
 		}
 		return _time;*/
