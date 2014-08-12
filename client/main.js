@@ -3,11 +3,11 @@
 
 Meteor.startup(function() {
     /* tells client to query server time every second */
-	setInterval(
+	setInterval(//delete once evan finishes his assignment
 	    function() {
             Meteor.call("getServerTime",
             function(error, result) {
-                Session.set("time", result);
+                Session.set("time", result); 
             });
         },
         1000);
@@ -21,6 +21,15 @@ Meteor.startup(function() {
                 textbox.value = "";
             },
         false);
+    
+    	
+    	
+    	
+    	
+    	
+	
+    
+    
     });
 
 
