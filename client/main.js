@@ -1,8 +1,7 @@
 // Set up a collection to contain player information. On the server,
 // it is backed by a MongoDB collection named "players".
 
-VOTE_TIME = 120000;//120 seconds
-SUBMIT_TIME = 60000;//60 seconds
+
 
 Meteor.startup(function() {
     /* tells client to query server time every second */

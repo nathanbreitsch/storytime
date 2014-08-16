@@ -25,8 +25,11 @@ Meteor.methods({
 	getTime: function(){
 		console.log("server call");
 		return (new Date).getTime();
-		
 	}
+	
+
+	
+	
 });
 
 

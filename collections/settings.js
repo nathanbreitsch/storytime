@@ -1,0 +1,2 @@
+VOTE_TIME = 120000;//120 seconds
+SUBMIT_TIME = 60000;//60 seconds
