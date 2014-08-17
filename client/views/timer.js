@@ -32,3 +32,4 @@ Template.timer.submitSeconds = function(){
 	}
 	return seconds;
 }
+

@@ -13,6 +13,5 @@ SubmittedFragments.allow({
 	insert: function(userId, doc){
 		var time = (new Date).getTime() % VOTE_TIME;
 		return (time <= SUBMIT_TIME);
-	
 	}
 });

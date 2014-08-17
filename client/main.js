@@ -1,6 +1,4 @@
-// Set up a collection to contain player information. On the server,
-// it is backed by a MongoDB collection named "players".
-
+var hidden = false;//whether or not submit div is hidden
 
 
 Meteor.startup(function() {
@@ -58,6 +56,15 @@ function setDisplayTime(){
 	var adjustedLocal = getClientTime() + offset;
 	var voteTimeRemaining = VOTE_TIME - adjustedLocal % VOTE_TIME;
 	var submitTimeRemaining = voteTimeRemaining + SUBMIT_TIME - VOTE_TIME;
+	if (submitTimeRemaining < 0 && ! hidden){
+		$('#submission').hide();
+		hidden = true;
+	}
+	else if (submitTimeRemaining > 0 && hidden){
+		$('#submission').show();
+		hidden = false;
+	}
+	
 	var voteMinutes = Math.floor(voteTimeRemaining / (1000 * 60));
 	var voteSeconds = Math.floor(voteTimeRemaining / (1000)) % 60;
 	var submitMinutes = Math.floor(submitTimeRemaining / (1000*60));
@@ -72,6 +79,8 @@ function setDisplayTime(){
 	Session.set("voteMinutes", voteMinutes);
 	Session.set("submitMinutes", submitMinutes);
 }
+
+
 
 
 
