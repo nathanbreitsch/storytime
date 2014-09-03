@@ -1,32 +1,31 @@
 <template name="signUp">
-<!--<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">-->
-    <div class="login">
+    <div class="landing">
+
         <h3 class="authTitle">Sign up</h3>
+
         <div class="row omb_row-sm-offset-3">
             <div class="col-xs-12 col-sm-6">    
-                <form class="loginForm" action="" autocomplete="off">
+
+                <form id="sign-up-form" class="landingForm" action="action" autocomplete="off">
 
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                        <input type="text" class="form-control" name="username" placeholder="username">
+                        <input id="username" type="text" class="form-control" placeholder="username">
                     </div>
 
                     <span id="username-help" class="help-block"></span>
 
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                        <input type="email" class="form-control" name="email" placeholder="email address">
+                        <input id="email" type="email" class="form-control" placeholder="email address">
                     </div>
 
                     <span id="email-help" class="help-block"></span>
                                         
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                        <input  type="password" class="form-control" name="password" placeholder="password">
-                        <input  type="password" class="form-control" name="verify" placeholder="verify">
-                    </div>
-
-                    <div class="input-group">
+                        <input  id="password" type="password" class="form-control" placeholder="password">
+                        <input  id="verify" type="password" class="form-control" placeholder="verify">
                     </div>
 
                     <span id="password-help" class="help-block"></span>
@@ -35,8 +34,12 @@
 
                     <p>We will send you an email that contains a link with which you can activate your account (wouldn't want too many bots blowing up the servers...).</p>
 
-                    <input type="submit" value="Sign-Up" class="btn btn-lg btn-primary btn-block submit"/>
+                    <input id="sign-up-button" type="submit" value="Sign-Up" class="btn btn-lg btn-primary btn-block submit"/>
+                    
+                    <span id="error-msg" class="help-block"></span>
+
                 </form>
+
             </div>
         </div>
 

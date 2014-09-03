@@ -1,51 +1,64 @@
 <template name="login">
-    <div class="login">
+    <div class="landing">
+
         <h3 class="authTitle">Login or <a href="{{pathFor 'signUp'}}">Sign up</a></h3>
+
         <div class="row row-sm-offset-3 socialButtons">
+
             <div class="col-xs-4 col-sm-2">
                 <a href="#" class="btn btn-lg btn-block btn-facebook">
                     <i class="fa fa-facebook visible-xs"></i>
                     <span class="hidden-xs">Facebook</span>
                 </a>
             </div>
+
             <div class="col-xs-4 col-sm-2">
                 <a href="#" class="btn btn-lg btn-block btn-twitter">
                     <i class="fa fa-twitter visible-xs"></i>
                     <span class="hidden-xs">Twitter</span>
                 </a>
             </div>  
+
             <div class="col-xs-4 col-sm-2">
                 <a href="#" class="btn btn-lg btn-block btn-google">
                     <i class="fa fa-google-plus visible-xs"></i>
                     <span class="hidden-xs">Google+</span>
                 </a>
             </div>  
+
         </div>
 
         <div class="row row-sm-offset-3 loginOr">
             <div class="col-xs-12 col-sm-6">
                 <hr class="hr">
-                <!--<span class="spanOr">or</span>-->
             </div>
         </div>
 
         <div class="row row-sm-offset-3">
             <div class="col-xs-12 col-sm-6">    
-                <form class="loginForm" action="" autocomplete="off" method="POST">
+
+                <form id="login-form" class="landingForm" action="action" autocomplete="off">
+
                     <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                        <input type="text" class="form-control" name="username" placeholder="email address">
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                        <input id="email" type="text" class="form-control" placeholder="email address">
                     </div>
-                    <span class="help-block"></span>
+
+                    <span id="email-help" class="help-block"></span>
                                         
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                        <input  type="password" class="form-control" name="password" placeholder="Password">
+                        <input  id="password" type="password" class="form-control" placeholder="Password">
                     </div>
-                    <span class="help-block">Password error</span>
 
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+                    <span id="password-help" class="help-block"></span>
+
+                    <input id="login-button" type="submit" class="btn btn-lg btn-primary btn-block" value="Login" />
+
+                    <span id="error-msg" class="help-block"></span>
+
                 </form>
+
             </div>
         </div>
         <div class="row row-sm-offset-3">

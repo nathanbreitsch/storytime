@@ -1,0 +1,36 @@
+<template name="header">
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="{{pathFor 'home'}}">StoryTime</a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="{{activeRouteClass 'create'}}">
+            <a href="{{pathFor 'create'}}">Create New</a>
+          </li>
+          <li class="{{activeRouteClass  'library'}}">
+            <a href="{{pathFor 'library'}}">Library</a>
+          </li>
+          <li class="{{activeRouteClass  'bookshelf'}}">
+            <a href="{{pathFor 'bookshelf'}}">Bookshelf</a>
+          </li>
+          <!--{{#if currentUser}}
+            <li class="{{activeRouteClass 'postSubmit'}}">
+              <a href="{{pathFor 'postSubmit'}}">Submit Post</a>
+            </li>
+            <li class="dropdown">
+              {{> notifications}}
+            </li>
+            {{/if}}-->
+        </ul>
+        <ul class="nav pull-right">
+            <li>{{> logoutDropdown}}</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+</template>

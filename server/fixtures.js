@@ -3,19 +3,29 @@ if (Stories.find().count() === 0) {
   var now = new Date().getTime();
 
   // create two users
-  var brianId = Meteor.users.insert({
-    profile: { name: 'Brian Breitsch' }
+  Accounts.createUser({
+      profile: {name: 'Brian Breitsch'},
+        email: 'brocktane@gmail.com',
+        username: 'brocktane',
+        password: 'asdf'
   });
-  var brian = Meteor.users.findOne(brianId);
-  var nathanId = Meteor.users.insert({
-    profile: { name: 'Nathan Wilson' }
+  var brian = Meteor.users.findOne({username: 'brocktane'});
+
+  Accounts.createUser({
+      profile: {name: 'Nathan Breitsch'},
+        email: 'nbreitsch@gmail.com',
+        username: 'nb',
+        password: 'asdf'
   });
-  var nathan = Meteor.users.findOne(nathanId);
+  var nathan = Meteor.users.findOne({username: 'nb'});
+
+  console.log('brian: ' + brian);
+  console.log('nathan: ' + nathan);
 
   var storyId = Stories.insert({
     title: 'Demo Story Title',
     userId: brian._id,
-    creator: brian.profile.name,
+    creator: brian.name,
     nonPrivate: true,
     fragments: [''],
     submitted: now - 7 * 3600 * 1000
