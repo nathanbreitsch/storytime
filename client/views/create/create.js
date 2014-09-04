@@ -23,3 +23,4 @@ Template.create.events({
         $('#error-msg').append('<i class="fa fa-spinner fa-spin fa-4x"></i>');
     }
 });
+

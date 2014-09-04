@@ -1,5 +1,5 @@
 Template.library.helpers({
-    'userStories': function() {
-        return Stories.find();
+    'stories': function() {
+        return Stories.find({});
     }
 });
