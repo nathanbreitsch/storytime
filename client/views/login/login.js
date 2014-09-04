@@ -1,7 +1,6 @@
 Template.login.events({
     'submit #login-form': function(e, t) {
         e.preventDefault();
-        console.log('login form hello');
         
         var email =  t.find('#email').value,
             password = t.find('#password').value;
@@ -17,7 +16,7 @@ Template.login.events({
 
             Meteor.loginWithPassword(email, password, function(error) {
                 if(Meteor.user() !== null) {
-                    Router.go('home');
+                    Router.go('library');
                 } else {
                     $('#error-msg').text('error logging in user: ' + error.message + '; ' + error.details);
                 }

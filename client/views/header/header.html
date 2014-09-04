@@ -1,0 +1,52 @@
+<template name="header">
+    <header class="navbar">
+        <nav class="nabar-default" role="navigation">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{pathFor 'home'}}">StoryTime</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="{{activeRouteClass  'library'}}">
+                            <a href="{{pathFor 'library'}}">Library</a>
+                        </li>
+                        {{#if currentUser}}
+                        <li class="{{activeRouteClass  'bookshelf'}}">
+                            <a href="{{pathFor 'bookshelf'}}">Bookshelf</a>
+                        </li>
+                        <li class="{{activeRouteClass 'create'}}">
+                            <a href="{{pathFor 'create'}}">Create New</a>
+                        </li>
+                        {{/if}}
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        {{#if currentUser}}
+                        <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            {{currentUser.profile.name}}
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a id="logout-button" href="#">log out</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{pathFor account}}">account settings</a></li>
+                        </ul>
+                        </li>
+                        {{else}}
+                        <li><a id="login-button" href="#" >log in</a></li>
+                        {{/if}}
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+</template>

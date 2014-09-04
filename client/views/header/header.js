@@ -10,3 +10,17 @@ Template.header.helpers({
         return active && 'active';
     }
 });
+
+Template.header.events({
+    'click #login-button': function(e) {
+        e.preventDefault();
+        Router.go('login');
+        return false;
+    },
+    'click #logout-button': function(e) {
+        e.preventDefault();
+        Meteor.logout();
+        Router.go('home');
+        return false;
+    }
+});

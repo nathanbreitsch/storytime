@@ -1,38 +1,43 @@
 <template name="create">
     <div class="container">
         <div class="row">
-          <div class="col-md-6 col-md-offset-3">
-            <div class="well well-sm">
-              <form class="form-horizontal" action="" method="post">
-              <fieldset>
-                <legend class="text-center">Create New Story!</legend>
+            <div class="col-md-6 col-md-offset-3">
 
-                <!-- Title input-->
-                <div class="form-group">
-                  <label class="col-md-3 control-label" for="title">Title</label>
-                  <div class="col-md-9">
-                    <input id="title" name="title" type="text" placeholder="Your Story's Title" class="form-control">
-                  </div>
+                <div class="well well-sm">
+                    <form class="form-horizontal" action="action">
+                    <fieldset>
+                    <legend class="text-center">Create a new story!</legend>
+
+                    <!-- Title input-->
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="title">Title</label>
+                        <div class="col-md-9">
+                            <input id="story-title" name="title" type="text" placeholder="Your story's title" class="form-control">
+                        </div>
+                    </div>
+
+                    <!-- Description-->
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="description">Description</label>
+                        <div class="col-md-9">
+                            <textarea class="form-control" id="story-description" name="description" placeholder="Your story's description..." rows="5"></textarea>
+                        </div>
+                    </div>
+
+                    <span id="error-msg" class="help-block"></span>
+
+                    <!-- Form actions -->
+                    <div class="form-group">
+                        <div class="col-md-12 text-right">
+                            <a id="create-story" href="#" class="btn btn-primary btn-lg">Create</a>
+                        </div>
+                    </div>
+
+                    </fieldset>
+                    </form>
                 </div>
 
-                <!-- Description-->
-                <div class="form-group">
-                  <label class="col-md-3 control-label" for="description">Description</label>
-                  <div class="col-md-9">
-                    <textarea class="form-control" id="description" name="description" placeholder="Your Story's Description..." rows="5"></textarea>
-                  </div>
-                </div>
-
-                <!-- Form actions -->
-                <div class="form-group">
-                  <div class="col-md-12 text-right">
-                    <button type="submit" class="btn btn-primary btn-lg">Create</button>
-                  </div>
-                </div>
-              </fieldset>
-              </form>
             </div>
-          </div>
         </div>
     </div>
 </template>
