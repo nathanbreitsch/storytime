@@ -1,5 +1,6 @@
 Template.desk.helpers({
     fragments: function() {
-                   return Fragments.find({_id: {$in: data.fragments}});
+                   console.log(this.fragments);
+                   return Fragments.find({_id: {$in: this.fragments}});
                }
 });

@@ -23,15 +23,16 @@ if (Stories.find().count() === 0) {
   console.log('nathan: ' + nathan);
 
   var storyId = Stories.insert({
-    title: 'Demo Story Title',
+    title: 'Animorph Queendom',
+    description: 'A long time ago, in a queendom ruled by Lady McMorph, there lived an orangatang.',
     userId: brian._id,
     creator: brian.name,
     nonPrivate: true,
-    fragments: [''],
+    fragments: [],
     submitted: now - 7 * 3600 * 1000
   });
 
-  Fragments.insert({
+  var frag1 = Fragments.insert({
     storyId: storyId,
     userId: brian._id,
     author: brian.profile.name,
@@ -39,7 +40,7 @@ if (Stories.find().count() === 0) {
     body: 'Once upon a time, '
   });
 
-  Fragments.insert({
+  var frag2 = Fragments.insert({
     storyId: null,
     userId: nathan._id,
     author: nathan.profile.name,
@@ -47,16 +48,20 @@ if (Stories.find().count() === 0) {
     body: 'there was an animorph, '
   });
 
+    Stories.update({_id: storyId}, {$addToSet: {fragments: frag1}});
+    Stories.update({_id: storyId}, {$addToSet: {fragments: frag2}});
+
   var storyId = Stories.insert({
     title: 'Demo Story Title',
+    description: 'Just a dumb demo story',
     userId: nathan._id,
     creator: nathan.profile.name,
     nonPrivate: true,
-    fragments: [''],
+    fragments: [],
     submitted: now - 7 * 3600 * 1000
   });
 
-  Fragments.insert({
+  var frag3 = Fragments.insert({
     storyId: storyId,
     userId: nathan._id,
     author: nathan.profile.name,
@@ -64,7 +69,7 @@ if (Stories.find().count() === 0) {
     body: 'A long time ago... '
   });
 
-  Fragments.insert({
+  var frag4 = Fragments.insert({
     storyId: null,
     userId: nathan._id,
     author: nathan.profile.name,
@@ -72,5 +77,7 @@ if (Stories.find().count() === 0) {
     body: 'in a galaxy somewhere, '
   });
 
+    Stories.update({_id: storyId}, {$addToSet: {fragments: frag3}});
+    Stories.update({_id: storyId}, {$addToSet: {fragments: frag4}});
 
 }
