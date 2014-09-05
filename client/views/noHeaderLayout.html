@@ -1,13 +1,20 @@
 <template name="noHeaderLayout">
-<div class="container">
-    <div class="row-fluid landing-container">
+<div class="container-fluid">
+    <div class="row-fluid">
         <!--<h1>StoryTime</h1>-->
         <!--<object type="image/svg+xml" data="image.svg">Your browser does not support SVG</object>-->
-        <img src="/img/storytime.svg" class="img-responsive storytime-logo"/>
-        <br>
-        <h3>Make stories with friends!</h3>
-        <br>
-        {{> yield}}
+        <div class="col-xs-12 col-sm-9 col-sm-offset-3">
+            <img src="/img/storytime.svg" class="img-responsive storytime-logo"/>
+            <h3>Make stories with friends!</h3>
+        </div>
     </div>
+    <div class="row-fluid">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+            <div class="container-fluid">
+            {{> yield}}
+            </div>
+        </div>
+    </div>
+    
 </div>
 </template>

@@ -1,9 +1,9 @@
 <template name="layout">
-<div class="container">
+<div class="container-fluid">
     {{> header}}
-    <div id="main" class="row-fluid">
+    <!--<div id="main" class="row-fluid">no, you want your templates to have multiple rows-->
         {{> yield}}
-    </div>
+    <!--</div>-->
     <!-- eventually add "{{> footer}}" -->
 </div>
 </template>
