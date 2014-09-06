@@ -5,8 +5,8 @@
     background-color: #37d980;
     border-color: #37d980;
     border-radius:5;
-    margin-bottom:10px;
     margin-right:10px;
+
 }
 
 .story-item-btn:hover,
@@ -19,3 +19,10 @@
     border-color: #34ca78;
 }
 .margin10{margin-bottom:10px; margin-right:10px;}
+.storyItem{
+    height:20%;
+    background-color:blue;
+}
+.library-list{
+    list-style: none;   
+}

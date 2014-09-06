@@ -1,31 +1,43 @@
 <template name="library">
-    <div class="container">
-        <div class="row-fluid">
-            <div class="col-md-6 col-md-offset-3">
+
+         
+                <ul class="library-list">
                 {{#each stories}}
-                    {{> storyItem}}
-                {{/each}}
-            </div>
-        </div>
-    </div>
+                    <div class="row">
+                        {{> storyItem}}
+                    </div>
+                {{/each}}  
+                </ul>
+          
+            
+      
+                    
 </template>
 
 
 <template name="storyItem">
-<div class="storyItem">
-    <div class="row">
-        <i class="pull-left fa fa-book fa-2x"></i>
-        <h2 id="title">{{title}}</h2>
-    </div>
-    <div class="row">
-        <article>
-            <p>
-                {{description}}
-            </p>
-        </article>
-        <a id="btn-to-desk" class="btn story-item-btn pull-right marginBottom10" href="#">Go to desk</a> 
-        <a id="btn-add-to-bookshelf" class="btn story-item-btn pull-right marginBottom10" href="#">Add to bookshelf</a> 
-    </div>
-    </div>
+    <li class="storyItem">
+        
+        <div class="col-xs-6">
+            <i class="fa fa-book fa-3x"></i>
+            <b class="title">{{title}}</b>
+            <div>
+                <a class="btn story-item-btn" href="desk/{{this._id}}">
+                    Go to desk
+                </a> 
+                <a class="btn story-item-btn" href="#">
+                    Add to bookshelf
+                </a> 
+            </div>
+        </div>
+        
+        <div class="col-xs-6">
+            <p>{{description}}</p>
+        </div>
+       
+    </li>  
+        
 </template>
+
+
 
