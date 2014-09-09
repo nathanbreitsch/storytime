@@ -6,7 +6,7 @@
 standard-app-packages
 autopublish
 insecure
-cmather:iron-router
+iron:router
 sacha:spin
 accounts-base
 mizzao:bootstrap-3

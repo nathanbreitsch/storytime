@@ -77,7 +77,7 @@ if (Stories.find().count() === 0) {
     body: 'in a galaxy somewhere, '
   });
 
-    Stories.update({_id: storyId}, {$addToSet: {fragments: frag3}});
-    Stories.update({_id: storyId}, {$addToSet: {fragments: frag4}});
+  Stories.update({_id: storyId}, {$addToSet: {fragments: frag3}});
+  Stories.update({_id: storyId}, {$addToSet: {fragments: frag4}});
 
 }

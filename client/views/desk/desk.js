@@ -1,7 +1,11 @@
 Template.desk.helpers({
   fragments: function() {
-    console.log(this.fragments);
-    return Fragments.find({_id: {$in: this.fragments}});
+    storyId = Session.get('currentStory');
+    story = Stories.findOne(storyId);
+    if (!story) {
+      throw new Meteor.Error(423, 'could not find story with id: ' + storyId);
+    }
+    return Fragments.find({_id: {$in: story.fragments}});
   },
   title: function(){
            //return this.title;
@@ -13,9 +17,9 @@ Template.fragmentDialog.events({
   'click #fragment-submit': function(e, t) {
     e.preventDefault();
     var text = t.find('#fragment-submit-text').value;
-    var storyId = this._id;
+    var storyId = Session.get('currentStory')._id;
     Meteor.call('submitFragment', {text: text, storyId: storyId}, function(e, id) {
-        if (e !== null) {
+        if (e) {
           console.log('fragment submit error: ' + e.message);
           $('#submit-help').text('error submitting fragment: ' + e.message);
         } else {
