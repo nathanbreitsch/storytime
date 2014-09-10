@@ -1,11 +1,42 @@
+@text-highlight: #a59;
+@light-gray: #eee;
+@medium-gray: #cdcdcd;
+@facebook-blue: #3b5998;
+@twitter-blue: #00aced;
+@google-red: #c32f10;
+
 body {
-    background: #eee;
-    color: #666666;
+    background: @light-gray;
 }
 
 .storytime-logo {
     padding-top: 25px;
     max-width: 80%;
+}
+
+#fragment-submissions {
+    height: 60%;
+    min-height: 150px;
+    max-height: 350px;
+    overflow: scroll;
+}
+
+#fragment-submit {
+    height: 40%;
+    min-height: 200px;
+}
+
+#fragment-submit-text {
+    border: none;
+    width: 100%;
+    background: @medium-gray;
+    overflow: scroll;
+    resize: none;
+}
+
+.fragment-text {
+    cursor: pointer;
+    &:hover, &:active {color:@text-highlight;}
 }
 
 .landing .authTitle {
@@ -18,13 +49,12 @@ body {
 }
 .landing .socialButtons a:hover {
     color: white;
-    opacity:1;      
+    opacity: 1;
 }
 
-.landing .socialButtons .btn-facebook {background: #3b5998;}
-.landing .socialButtons .btn-twitter {background: #00aced;}
-.landing .socialButtons .btn-google {background: #c32f10;}
-
+.landing .socialButtons .btn-facebook {background: facebook-blue;}
+.landing .socialButtons .btn-twitter {background: @twitter-blue;}
+.landing .socialButtons .btn-google {background: @google-red;}
 
 .landing .loginOr {
     position: relative;
@@ -35,12 +65,14 @@ body {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
 }
+
 .landing .loginOr .hr {
-    background-color: #cdcdcd;
+    background-color: @medium-gray;
     height: 1px;
     margin-top: 0px !important;
     margin-bottom: 0px !important;
 }
+
 .landing  .spanOr {
     position: absolute;
     left: 50%;
@@ -54,6 +86,7 @@ body {
 .landing .landingForm .input-group.i {
     width: 2em;
 }
+
 .landing .landingForm  .help-block {
     color: red;
 }
@@ -62,3 +95,5 @@ body {
     text-align: right;
     margin-top:10px;    
 }       
+
+

@@ -1,40 +1,47 @@
 <template name="desk">
   <div class="container">
-    <div class="col col-offset-4">
-      <h1>{{title}}</h1>
+    <div class="row">
+      <div class="col col-offset-4">
+        <h1>{{title}}</h1>
+      </div>
     </div>
-    <div class="row page">
-      <div id="page" class="col-4 col-offset-4">
+    <div class="row">
+      <div id="page" class="col-md-8">
         {{#each fragments}}
           <span class="fragment-text" id="_id">{{text}}</span>
         {{/each}}
         <span id="front-cursor">|</span>
-
+      </div>
+      <div id="interaction" class="col-md-4">
         {{> fragmentDialog}}
-        <!--<div class="col-sm-6">
-          {{> voteArea}}
-        </div>-->
       </div>
     </div>
   </div>
 </template>
 
 <template name="fragmentDialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
-        <h3>Fragment Submissions</h3>
-      </div>
-      {{#if currentUser}}
-      <form class="modal-header">
-        <button id="fragment-submit" type="button" class="close" data-dismiss="modal" aria-hidden="true">submit</button>
-        <textarea id="fragment-submit-text" style="width:100%;" ></textarea>
-        <!--<h4 class="modal-title">Modal title</h4>-->
-      </form>
-      <span id="submit-help"></span>
-      {{else}}
-      <p>Login to submit content</p>
-      {{/if}}
-    </div>
+  <div id="fragment-submissions" class="row">
+    <h3>Fragment Submissions</h3>
+    <p>thing</p><br>
+    <p>thing</p><br>
+    <p>thing</p><br>
+    <p>thing</p><br>
+    <p>thing</p><br>
+    <p>thing</p><br>
+    <p>thing</p><br>
+    <p>thing</p><br>
+    <p>thing</p><br>
+    <p>thing</p><br>
   </div>
+  <form id="fragment-submit" class="row">
+    {{#if currentUser}}
+    <div class="row">
+      <button id="fragment-submit-btn" type="button" class="close">submit</button>
+    </div>
+    <textarea id="fragment-submit-text"></textarea>
+    <span id="submit-help"></span>
+    {{else}}
+    <p>Login to submit content</p>
+    {{/if}}
+  </form>
 </template>

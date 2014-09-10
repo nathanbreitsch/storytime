@@ -32,5 +32,5 @@ Meteor.methods({
     //createNewFragmentNotification(fragment);
     
     return id;
-  }
+  },
 });

@@ -14,7 +14,7 @@ Template.desk.helpers({
 });
 
 Template.fragmentDialog.events({
-  'click #fragment-submit': function(e, t) {
+  'click #fragment-submit-btn': function(e, t) {
     e.preventDefault();
     var text = t.find('#fragment-submit-text').value;
     var storyId = Session.get('currentStory')._id;
