@@ -1,9 +1,10 @@
 Template.create.events({
   'click #create-story': function(e, t) {
+      
     e.preventDefault();
     var title = t.find('#story-title').value,
         description = t.find('#story-description').value;
-      console.log(title);
+  
 
     Meteor.call('createStory',
       {title: title, description: description},

@@ -1,5 +1,4 @@
 <template name="library">
-
          
                 <ul class="library-list">
                 {{#each stories}}
@@ -18,20 +17,27 @@
 <template name="storyItem">
     <li class="storyItem">
         
-        <div class="col-xs-6">
-            <i class="fa fa-book fa-3x"></i>
-            <b class="title">{{title}}</b>
-            <div>
+        <div class="col-sm-5">
+            <div class="row">
+                <i class="fa fa-book fa-3x"></i>
+                <b class="title">{{title}}
+                </b>
+            </div>
+            
+            <div class="row">
+                
                 <a class="btn story-item-btn" href="desk/{{this._id}}">
-                    Go to desk
+                    Go to desk 
                 </a> 
-                <a class="btn story-item-btn" href="#">
-                    Add to bookshelf
-                </a> 
+                {{#if inBookshelf}}
+                    <a class="btn story-item-btn btn-add-to-bookshelf " href="#">
+                        Add to bookshelf
+                    </a> 
+                {{/if}}
             </div>
         </div>
         
-        <div class="col-xs-6">
+        <div class="col-sm-7">
             <p>{{description}}</p>
         </div>
        
