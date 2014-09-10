@@ -6,9 +6,9 @@
     <div class="row page">
       <div id="page" class="col-4 col-offset-4">
         {{#each fragments}}
-          <span id="_id">{{text}}</span>
+          <span class="fragment-text" id="_id">{{text}}</span>
         {{/each}}
-        <span id="cursor">|</span>
+        <span id="front-cursor">|</span>
 
         {{> fragmentDialog}}
         <!--<div class="col-sm-6">
