@@ -28,6 +28,15 @@ Template.interaction.events({
       });
     },
 
+  'click #story-advance-btn': function(e, t) {
+    e.preventDefault();
+    console.log('advance clicked');
+    var position = Session.get('activePosition');
+    Meteor.call('advanceStory', {storyId: this._id, position: position}, function(err, res) {
+      console.log('advance return');
+    });
+  },
+  
   'click .upvote': function(e, t) {
       e.preventDefault();
       console.log('clicked');

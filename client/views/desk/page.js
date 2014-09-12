@@ -2,6 +2,7 @@ Template.page.helpers({
   fragments: function() {
     return Fragments.find({'storyId': this._id, 'visible': true}, {sort: {position: 1}});
   }
+
 });
 
 Template.page.events({

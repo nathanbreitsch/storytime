@@ -14,8 +14,21 @@ Meteor.methods({
     return storyId;
   },
 
-  advanceStory: function(storyId) {
+  advanceStory: function(params) {
     console.log('advanceStory');
+    var storyId = params.storyId;
+    var position = params.position;
+    console.log('storyId: ' + storyId);
+    console.log('position: ' + position);
+    var cursor = Fragments.find({storyId: storyId, position: position}, {sort: {votes: -1}, votes: true});
+    if (cursor.count() > 0) {
+      var fragments = cursor.fetch();
+      console.log('fragments: ' + fragments);
+      console.log('max fragment votes: ' + fragments[0].votes);
+      Fragments.update(fragments[0]._id, {visible: true});
+    } else {
+      console.log('no available fragments');
+    }
     Stories.update(storyId, {$inc: {front: 1}});
   },
 
