@@ -20,16 +20,18 @@ Meteor.methods({
     var position = params.position;
     console.log('storyId: ' + storyId);
     console.log('position: ' + position);
-    var cursor = Fragments.find({storyId: storyId, position: position}, {sort: {votes: -1}, votes: true});
+    var cursor = Fragments.find({storyId: storyId, position: position}, {sort: {votes: -1}});
     if (cursor.count() > 0) {
       var fragments = cursor.fetch();
       console.log('fragments: ' + fragments);
       console.log('max fragment votes: ' + fragments[0].votes);
-      Fragments.update(fragments[0]._id, {visible: true});
+      var ids = _.pluck(fragments, "_id");
+      Fragments.update({_id: {$in: ids}}, {$set: {visible: true}});
+      Fragments.update(fragments[0]._id, {$set: {visible: true}});
+      Stories.update(storyId, {$inc: {front: 1}});
     } else {
       console.log('no available fragments');
     }
-    Stories.update(storyId, {$inc: {front: 1}});
   },
 
 });

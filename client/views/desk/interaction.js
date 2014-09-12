@@ -1,8 +1,10 @@
 Template.interaction.helpers({
+
   fragments: function() {
     var activePosition = Session.get('activePosition');
     return Fragments.find({'storyId': this._id, 'position': activePosition}, {sort: {votes: -1}}).fetch();
-  }
+  },
+
 });
 
 Template.interaction.events({
