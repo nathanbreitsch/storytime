@@ -7,41 +7,12 @@
     </div>
     <div class="row">
       <div id="page" class="col-md-8">
-        {{#each fragments}}
-          <span class="fragment-text" id="_id">{{text}}</span>
-        {{/each}}
-        <span id="front-cursor">|</span>
+        {{> page}}
       </div>
       <div id="interaction" class="col-md-4">
-        {{> fragmentDialog}}
+        {{> interaction}}
       </div>
     </div>
   </div>
 </template>
 
-<template name="fragmentDialog">
-  <div id="fragment-submissions" class="row">
-    <h3>Fragment Submissions</h3>
-    <p>thing</p><br>
-    <p>thing</p><br>
-    <p>thing</p><br>
-    <p>thing</p><br>
-    <p>thing</p><br>
-    <p>thing</p><br>
-    <p>thing</p><br>
-    <p>thing</p><br>
-    <p>thing</p><br>
-    <p>thing</p><br>
-  </div>
-  <form id="fragment-submit" class="row">
-    {{#if currentUser}}
-    <div class="row">
-      <button id="fragment-submit-btn" type="button" class="close">submit</button>
-    </div>
-    <textarea id="fragment-submit-text"></textarea>
-    <span id="submit-help"></span>
-    {{else}}
-    <p>Login to submit content</p>
-    {{/if}}
-  </form>
-</template>

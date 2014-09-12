@@ -1,9 +1,21 @@
 @text-highlight: #a59;
 @light-gray: #eee;
 @medium-gray: #cdcdcd;
+@upvote-green: #a5dfd0;
 @facebook-blue: #3b5998;
 @twitter-blue: #00aced;
 @google-red: #c32f10;
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {}
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {}
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {}
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {}
+/* Landscape phones and smaller */
+@media (max-width: 480px) {}
 
 body {
     background: @light-gray;
@@ -15,10 +27,14 @@ body {
 }
 
 #fragment-submissions {
-    height: 60%;
-    min-height: 150px;
-    max-height: 350px;
-    overflow: scroll;
+    @media (min-width: 768px) {
+        min-height: 150px;
+        max-height: 350px;
+        overflow: scroll;
+    }
+    @media (max-width: 767px) {
+        min-height: 150px;
+    }
 }
 
 #fragment-submit {
@@ -34,9 +50,25 @@ body {
     resize: none;
 }
 
-.fragment-text {
+/*
+#fragment-submit-btn {
+    align: left;
+    color: @medium-gray;
+}
+*/
+
+#page span {
     cursor: pointer;
     &:hover, &:active {color:@text-highlight;}
+}
+
+.active {
+    color: @medium-gray;
+}
+
+.upvote {
+    cursor: pointer;
+    &:hover, &:active {color:@upvote-green;}
 }
 
 .landing .authTitle {

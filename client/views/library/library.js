@@ -1,30 +1,43 @@
 Template.library.helpers({
-    'stories': function() {
-        var stories = Stories.find({},{transform:function(story){
-            story.inBookshelf = true;
-            return story;
-        }
-        });
-        
-        return stories;
-    }});
 
+  'stories': function() {
+    var stories = Stories.find({});
+    return stories;
+  },
+
+});
+
+Template.storyItem.helpers({
+
+  'canAddToBookshelf': function() {
+    var profile = this;
+    var storyId = this._id;
+    if (profile) {
+      if (_.contains(profile.bookshelf, storyId)) {
+        return false;
+      }
+      return true;
+    }
+    return false;
+  },
+
+});
 
 Template.storyItem.events({
-    'click #btn-to-desk': function(e, t) {
-        e.preventDefault();
-        storyId = t.data._id;
-        Router.go('desk', {_id: storyId});
-    },
-    'click .btn-add-to-bookshelf': function(e, t) {
-        alert("hello");
-        e.preventDefault();
-        storyId = t.data._id;
-        Meteor.addToBookshelf(storyId, function(error) {
-            if(error) {
-                // TODO handle better
-                console.log('error');
-            }
-        });
-    }
+
+  'click #btn-to-desk': function(evt, tmp) {
+    evt.preventDefault();
+    storyId = tmp.data._id;
+    Router.go('desk', {_id: storyId});
+  },
+
+  'click .btn-add-to-bookshelf': function(evt, tmp) {
+    evt.preventDefault();
+    storyId = tmp.data._id;
+    Meteor.call('addToBookshelf', storyId, function(err) {
+      if(err) {
+        console.log('error');
+      }
+    });
+  }
 });

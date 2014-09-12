@@ -1,49 +1,36 @@
 <template name="library">
-         
-                <ul class="library-list">
-                {{#each stories}}
-                    <div class="row">
-                        {{> storyItem}}
-                    </div>
-                {{/each}}  
-                </ul>
-          
-            
-      
-                    
+  <ul class="library-list">
+  {{#each stories}}
+    <div class="row">
+      {{> storyItem}}
+    </div>
+  {{/each}}  
+  </ul>
 </template>
 
 
 <template name="storyItem">
-    <li class="storyItem">
-        
-        <div class="col-sm-5">
-            <div class="row">
-                <i class="fa fa-book fa-3x"></i>
-                <b class="title">{{title}}
-                </b>
-            </div>
-            
-            <div class="row">
-                
-                <a class="btn story-item-btn" href="desk/{{this._id}}">
-                    Go to desk 
-                </a> 
-                {{#if inBookshelf}}
-                    <a class="btn story-item-btn btn-add-to-bookshelf " href="#">
-                        Add to bookshelf
-                    </a> 
-                {{/if}}
-            </div>
-        </div>
-        
-        <div class="col-sm-7">
-            <p>{{description}}</p>
-        </div>
-       
-    </li>  
-        
+  <li class="storyItem">
+    <div class="col-sm-5">
+      <div class="row">
+        <i class="fa fa-book fa-3x"></i>
+        <b class="title">{{title}}
+        </b>
+      </div>
+      <div class="row">
+        <a class="btn story-item-btn" href="desk/{{this._id}}">
+          Go to desk 
+        </a> 
+        {{#if canAddToBookshelf}}
+          <a class="btn story-item-btn btn-add-to-bookshelf " href="#">
+            Add to bookshelf
+          </a> 
+        {{/if}}
+      </div>
+    </div>
+    <div class="col-sm-7">
+      <p>{{description}}</p>
+    </div>
+  </li>  
 </template>
-
-
 

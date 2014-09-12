@@ -2,20 +2,23 @@
 if (Stories.find().count() === 0) {
   var now = new Date().getTime();
 
+  var brianProfile = Profiles.insert({name: 'Brian Breitsch', bookshelf: []});
+  var nathanProfile = Profiles.insert({name: 'Nathan Breitsch', bookshelf: []});
+
   // create two users
   Accounts.createUser({
-      profile: {name: 'Brian Breitsch'},
-        email: 'brocktane@gmail.com',
-        username: 'brocktane',
-        password: 'asdf'
+    profile: brianProfile,
+    email: 'brocktane@gmail.com',
+    username: 'brocktane',
+    password: 'asdf',
   });
   var brian = Meteor.users.findOne({username: 'brocktane'});
 
   Accounts.createUser({
-      profile: {name: 'Nathan Breitsch'},
-        email: 'nbreitsch@gmail.com',
-        username: 'nb',
-        password: 'asdf'
+    profile: nathanProfile,
+    email: 'nbreitsch@gmail.com',
+    username: 'nb',
+    password: 'asdf'
   });
   var nathan = Meteor.users.findOne({username: 'nb'});
 
@@ -25,59 +28,56 @@ if (Stories.find().count() === 0) {
   var storyId = Stories.insert({
     title: 'Animorph Queendom',
     description: 'A long time ago, in a queendom ruled by Lady McMorph, there lived an orangatang.',
-    userId: brian._id,
-    creator: brian.name,
-    nonPrivate: true,
-    fragments: [],
-    submitted: now - 7 * 3600 * 1000
+    creatorId: brian._id,
+    submitted: now - 7 * 3600 * 1000,
+    front: 3
   });
 
   var frag1 = Fragments.insert({
     storyId: storyId,
-    userId: brian._id,
-    author: brian.profile.name,
+    creatorId: brian._id,
     submitted: now - 5 * 3600 * 1000,
-    body: 'Once upon a time, '
+    text: 'Once upon a time, ',
+    position: 1,
+    visible: true,
+    votes: 0
   });
 
   var frag2 = Fragments.insert({
-    storyId: null,
-    userId: nathan._id,
-    author: nathan.profile.name,
+    storyId: storyId,
+    creatorId: nathan._id,
     submitted: now - 5 * 3600 * 1000,
-    body: 'there was an animorph, '
+    text: 'there was an animorph, ',
+    position: 2,
+    visible: true,
+    votes: 0
   });
 
-    Stories.update({_id: storyId}, {$addToSet: {fragments: frag1}});
-    Stories.update({_id: storyId}, {$addToSet: {fragments: frag2}});
-
-  var storyId = Stories.insert({
+  storyId = Stories.insert({
     title: 'Demo Story Title',
     description: 'Just a dumb demo story',
-    userId: nathan._id,
-    creator: nathan.profile.name,
-    nonPrivate: true,
-    fragments: [],
-    submitted: now - 7 * 3600 * 1000
+    creatorId: nathan._id,
+    submitted: now - 7 * 3600 * 1000,
+    front: 2
   });
 
   var frag3 = Fragments.insert({
     storyId: storyId,
-    userId: nathan._id,
-    author: nathan.profile.name,
+    creatorId: nathan._id,
     submitted: now - 5 * 3600 * 1000,
-    body: 'A long time ago... '
+    text: 'A long time ago... ',
+    position: 1,
+    visible: true,
+    votes: 0
   });
 
   var frag4 = Fragments.insert({
-    storyId: null,
-    userId: nathan._id,
-    author: nathan.profile.name,
+    storyId: storyId,
+    creatorId: nathan._id,
     submitted: now - 5 * 3600 * 1000,
-    body: 'in a galaxy somewhere, '
+    text: 'in a galaxy somewhere, ',
+    position: 2,
+    visible: false,
+    votes: 0
   });
-
-  Stories.update({_id: storyId}, {$addToSet: {fragments: frag3}});
-  Stories.update({_id: storyId}, {$addToSet: {fragments: frag4}});
-
 }
