@@ -58,7 +58,7 @@ if (Stories.find().count() === 0) {
     description: 'Just a dumb demo story',
     creatorId: nathan._id,
     submitted: now - 7 * 3600 * 1000,
-    front: 2
+    front: 2,
   });
 
   var frag3 = Fragments.insert({

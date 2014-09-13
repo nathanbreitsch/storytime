@@ -8,5 +8,5 @@ Template.desk.helpers({
 
 Template.desk.created = function() {
   console.log('desk created: this is: ' + this.data);
-  Session.set('currentPosition', this.front); 
+  Session.set('activePosition', this.front); 
 };
