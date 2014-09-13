@@ -10,7 +10,8 @@ Template.library.helpers({
 Template.storyItem.helpers({
 
   'canAddToBookshelf': function() {
-    var profile = this;
+      
+    var profile = Profiles.findOne({_id: Meteor.user().profile});
     var storyId = this._id;
     if (profile) {
       if (_.contains(profile.bookshelf, storyId)) {

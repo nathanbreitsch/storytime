@@ -18,7 +18,9 @@ Meteor.methods({
     if(!user) {
       throw new Meteor.Error(401, "You need to login to add to your bookshelf");
     }
-    Profiles.update(user.profileId, {$addToSet: {bookshelf: storyId}});
-  }
+    Profiles.update({_id: user.profile}, {$push: {bookshelf: storyId}});
+  }, 
+    
+
 
 });
