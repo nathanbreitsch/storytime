@@ -10,6 +10,7 @@ Meteor.methods({
       front: 1
     });
     var storyId = Stories.insert(story);
+    createDefaultMilestoneDoc(storyId);
     return storyId;
   },
 

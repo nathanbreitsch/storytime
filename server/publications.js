@@ -11,3 +11,7 @@ Meteor.publish("fragments", function(storyId) {
 Meteor.publish("profiles", function() {
   return Profiles.find({});
 });
+
+Meteor.publish("milestones", function(){
+    return Milestones.find({});   
+});

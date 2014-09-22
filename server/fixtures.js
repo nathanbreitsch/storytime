@@ -32,6 +32,15 @@ if (Stories.find().count() === 0) {
     submitted: now - 7 * 3600 * 1000,
     front: 3
   });
+    
+Milestones.insert({
+    storyId: storyId,
+    beginSubmit: 'never',
+    endSubmit: 'never',
+    beginVote: 'never',
+    endVote: 'never'
+
+});
 
   var frag1 = Fragments.insert({
     storyId: storyId,
@@ -60,6 +69,15 @@ if (Stories.find().count() === 0) {
     submitted: now - 7 * 3600 * 1000,
     front: 2,
   });
+    
+Milestones.insert({
+    storyId: storyId,
+    beginSubmit: 'never',
+    endSubmit: 'never',
+    beginVote: 'never',
+    endVote: 'never'
+});
+
 
   var frag3 = Fragments.insert({
     storyId: storyId,
@@ -81,3 +99,4 @@ if (Stories.find().count() === 0) {
     votes: 0
   });
 }
+
