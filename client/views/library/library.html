@@ -1,41 +1,50 @@
 <template name="library">
-  <ul class="library-list">
-  {{#each stories}}
-    <div class="row">
-      {{> storyItem}}
-    </div>
-  {{/each}}  
-  </ul>
+
+         	<div class="container">
+                
+                {{#each stories}}
+                        {{> storyItem}}
+                {{/each}}  
+                
+            </div>
+                
 </template>
 
 
 <template name="storyItem">
-  <li class="storyItem">
-    <div class="col-sm-5">
-      <div class="row">
-        <i class="fa fa-book fa-3x"></i>
-        <b class="title">{{title}}
-        </b>
-      </div>
-      <div class="row">
-        <a class="btn story-item-btn" href="desk/{{this._id}}">
-          Go to desk 
-        </a> 
-        {{#if canAddToBookshelf}}
-          <a class="btn story-item-btn btn-add-to-bookshelf " href="#">
-            Add to bookshelf
-          </a> 
-        {{else}}
-          <a class="btn story-item-btn" href="#">
-            In Bookshelf!
-          </a> 
-        {{/if}}
-      </div>
-    </div>
-    <div class="col-sm-7">
-      <p>{{description}}</p>
-    </div>
-       <div class="spacer" style="clear: both;"></div>
-  </li>  
-</template>
 
+
+    	
+ 		 	<div class="col-lg-4 col-md-6 col-xs-12 thumb">
+  		  		<div class="thumbnail">
+	      			<img class="img-responsive" src="http://placehold.it/300x150" alt="...">
+	    	  		<div class="caption">
+	    	  			
+  	   	   				<div >
+  	   	   					<h4>
+  	   	   					<p id="coverTitle">
+  	   	   					{{title}}
+  	   	   					</p>
+  	   	   					</h4>
+  	   	   				</div>
+  	   	   				
+ 	   					<textarea class="form-control" id="coverDescription"  style="resize:none" readonly="readonly"  name="description" rows="4" cols="4">{{description}}</textarea>
+  	      				<p></p>
+  	      				<p>
+  	      					<a href="#" class="btn btn-primary btn-to-desk">Read</a> 
+  	      					{{#if canAddToBookshelf}}
+       						   <a class="btn story-item-btn btn-add-to-bookshelf " href="#">
+   						         Add to bookshelf
+   						       </a> 
+    					    {{else}}
+     					       <a class="btn story-item-btn" href="#">
+       						     In Bookshelf!
+   						       </a> 
+      					    {{/if}}
+  	      				</p>
+ 	    	 		</div>
+ 	   			</div>
+			</div>
+   
+    	
+</template>

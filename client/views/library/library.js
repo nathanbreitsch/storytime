@@ -26,7 +26,7 @@ Template.storyItem.helpers({
 
 Template.storyItem.events({
 
-  'click #btn-to-desk': function(evt, tmp) {
+  'click .btn-to-desk': function(evt, tmp) {
     evt.preventDefault();
     storyId = tmp.data._id;
     Router.go('desk', {_id: storyId});

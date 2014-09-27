@@ -21,11 +21,13 @@
 .margin10{margin-bottom:10px; margin-right:10px;}
 .storyItem{
     height:20%;
-    margin:5px;
-    padding:5px;
-    background-color: rgb(205,205,205);
-
 }
 .library-list{
     list-style: none;   
 }
+
+.title{
+	text-overflow: ellipsis;
+	cursor: default;
+	}
+	
