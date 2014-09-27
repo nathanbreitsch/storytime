@@ -14,9 +14,6 @@ Template.desk.created = function() {
         Session.set('currentStory', currentStory);
     });
 
-    Tracker.autorun(function(){
-        var milestones = Milestones.findOne({storyId:Session.get("storyId")});
-        Session.set('milestones', milestones);
-    });
+   
 };
 
