@@ -1,7 +1,10 @@
 <template name="page">
-  {{#each fragments}}
-    <span class="fragment-text" id="{{_id}}">{{text}}</span>
-  {{/each}}
-  <span id="front-cursor">...|</span>
+    <article id="story">
+        {{#each fragments}}
+            <span class="fragment-text" id="{{_id}}">{{text}}</span>
+        {{/each}}
+
+        <span id="front-cursor">...|</span>
+    </article>
 </template>
 

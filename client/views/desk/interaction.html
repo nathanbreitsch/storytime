@@ -1,10 +1,13 @@
 <template name="interaction">
+
   <div class="row">
-    <h3>Fragment Submissions</h3>
+    <h3 id="submit-label">Fragment Submissions</h3>
   </div>
-  <div class="row">
+    
+  <div class="row advance">
     <button id="story-advance-btn" type="button" class="close">advance</button>
   </div>
+    
   <div id="fragment-submissions" class="row">
     {{#each fragments}}
     <div class="submitted-fragment">
@@ -14,15 +17,18 @@
     </div>
     {{/each}}
   </div>
+    
   <form id="fragment-submit" class="row">
     {{#if currentUser}}
-    <div class="row">
-      <button id="fragment-submit-btn" type="button" class="close">submit</button>
-    </div>
+ 
     <textarea id="fragment-submit-text"></textarea>
     <span id="submit-help"></span>
+         <div >
+      <button id="fragment-submit-btn" type="button" class="close">submit</button>
+    </div>
     {{else}}
     <p>Login to submit content</p>
     {{/if}}
   </form>
+
 </template>

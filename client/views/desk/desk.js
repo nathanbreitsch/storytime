@@ -17,3 +17,7 @@ Template.desk.created = function() {
    
 };
 
+Template.desk.rendered = function(){
+ //$('#story').maxHeight($(window).height() * 0.7);   
+}
+

@@ -25,6 +25,7 @@ var ClientTimer = function(serverMilestones){
     this.endSubmitTimeoutHandle = null;
     this.beginVoteTimeoutHandle = null;
     this.endVoteTimeoutHandle = null;
+    this.delay = null;
     this.oneSecondIntervalHandle = null; //increments timer
     this.secondsLeftUntilBeginVote = 0;
     this.secondsLeftUntilEndVote = 0;
@@ -37,6 +38,7 @@ ClientTimer.prototype.cancelTimeouts = function(){
     Meteor.clearTimeout(this.endSubmitTimeoutHandle);
     Meteor.clearTimeout(this.beginVoteTimeoutHandle);
     Meteor.clearTimeout(this.endVoteTimeoutHandle);
+    Meteor.clearTimeout(this.delay);
     Meteor.clearInterval(this.oneSecondIntervalHandle);
 };
 
@@ -62,7 +64,7 @@ ClientTimer.prototype.setMilestones = function(milestones){
     var callback = this.oneSecondCallback.bind(this);
     //injected assumption that milestones all equal mod 1000 ms
     var residue = this.secondsLeftUntilBeginVote % 1000;
-    Meteor.setTimeout(function(){
+    this.delay = Meteor.setTimeout(function(){
         this.oneSecondIntervalHandle = Meteor.setInterval(callback, 1000);
     }.bind(this), residue);
     

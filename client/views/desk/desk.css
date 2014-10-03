@@ -1,0 +1,89 @@
+#desk{
+ height:100%; 
+}
+
+#desk-header{
+    height:10%;
+    padding-bottom:5px;
+}
+
+#desk-content{
+    height:80%;
+    padding-bottom:5px;
+
+}
+
+#page{
+    height:90%;
+}
+
+#story{
+    background-color:rgb(250, 249, 227);
+    padding:5px;
+    word-wrap: break-word;
+    /*overflow-x:scroll;*/
+    overflow-y:scroll;
+    height:100%;
+}
+
+.active {
+    color: @medium-gray;
+}
+
+#page span {
+    cursor: pointer;
+}
+
+#interaction{
+    height:90%;
+    background-color:rgb(250, 249, 227);
+    padding:5px;
+}
+
+
+#fragment-submissions {
+    overflow-y: scroll;
+    margin-left:auto;
+    margin-right:auto;
+    width:80%;
+    height:170px;
+    margin-bottom:10px;
+    background-color:rgb(255, 255, 255);
+}
+
+#fragment-submit {
+    height: 40%;
+    min-height: 200px;
+    margin-left:auto;
+    margin-right:auto;
+    width:80%;
+}
+
+
+#fragment-submit-text {
+    border: none;
+    overflow-y: scroll;
+    resize: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+
+
+
+.upvote {
+    cursor: pointer;
+}
+
+#submit-label{
+    margin-left:auto;
+    margin-right:auto;
+    width:80%;
+}
+
+.advance{
+    margin-left:auto;
+    margin-right:auto;
+    width:80%;
+}
