@@ -1,3 +1,5 @@
+@import (once) url('/client/views/mixins.import.less');
+
 @text-highlight: #a59;
 @light-gray: #eee;
 @medium-gray: #cdcdcd;
@@ -20,13 +22,13 @@
 html, body { height: 100%; width: 100%; margin: 0; }
 
 body {
-    background: @light-gray;
+    background: @purple-2;
     overflow-y:hidden;
     //position:fixed;
 }
 
 .container{
-    height:100%;   
+    height:100%;
 }
 
 .storytime-logo {
@@ -41,16 +43,16 @@ body {
 .landing .authTitle {
     text-align: left;
 }
-    
+/*
 .landing .socialButtons a {
-    color: white; // In yourUse @body-bg 
+    color: white; // In yourUse @body-bg
     opacity:0.9;
 }
 .landing .socialButtons a:hover {
     color: white;
     opacity: 1;
 }
-
+*/
 .landing .socialButtons .btn-facebook {background: facebook-blue;}
 .landing .socialButtons .btn-twitter {background: @twitter-blue;}
 .landing .socialButtons .btn-google {background: @google-red;}
@@ -80,7 +82,7 @@ body {
     background-color: white;
     width: 3em;
     text-align: center;
-}           
+}
 
 .landing .landingForm .input-group.i {
     width: 2em;
@@ -92,7 +94,5 @@ body {
 
 .landing .forgotPwd {
     text-align: right;
-    margin-top:10px;    
-}       
-
-
+    margin-top:10px;
+}

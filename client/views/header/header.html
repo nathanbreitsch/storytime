@@ -9,48 +9,48 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{pathFor 'home'}}">StoryTime</a>
+      <a class="navbar-brand nav-item" href="{{pathFor 'home'}}">StoryTime</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li>
-            <a href="{{pathFor 'library'}}">Library</a> 
+            <a href="{{pathFor 'library'}}" class="nav-item">Library</a>
         </li>
       </ul>
       {{#if currentUser}}
       <ul class="nav navbar-nav">
         <li>
-            <a href="{{pathFor 'bookshelf'}}">Bookshelf</a> 
+            <a href="{{pathFor 'bookshelf'}}" class="nav-item">Bookshelf</a>
         </li>
       </ul>
       <ul class="nav navbar-nav">
         <li>
-            <a href="{{pathFor 'create'}}">Create New</a> 
+            <a href="{{pathFor 'create'}}" class="nav-item">Create New</a>
         </li>
       </ul>
       {{/if}}
-     
+
       <ul class="nav navbar-nav navbar-right">
           {{#if currentUser}}
           <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="#" class="dropdown-toggle nav-item" data-toggle="dropdown">
                     {{currentUser.username}}
                     <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a id="logout-button" href="#">log out</a></li>
+                    <li><a id="logout-button" href="#" class="nav-item">log out</a></li>
                     <li class="divider"></li>
-                    <li><a href="{{pathFor 'account'}}">account settings</a></li>
+                    <li><a href="{{pathFor 'account'}}" class="nav-item">account settings</a></li>
                 </ul>
           </li>
           {{else}}
-            <li><a href="{{pathFor 'login'}}" >Log In</a></li>
+            <li><a href="{{pathFor 'login'}}" class="nav-item" >Log In</a></li>
           {{/if}}
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-    
+
 </template>

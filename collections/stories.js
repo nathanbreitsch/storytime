@@ -33,7 +33,7 @@ Meteor.methods({
     } else {
     }
   },
-    
+
 
 
 });

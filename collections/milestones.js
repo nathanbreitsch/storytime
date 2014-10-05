@@ -1,7 +1,6 @@
 Milestones = new Meteor.Collection("milestones");
 
-
-var createDefaultMilestoneDoc = function(storyId){
+ createDefaultMilestoneDoc = function(storyId){
  /*Milestones.upsert({storyId:storyId},
     {$set: {
         beginVote: 'never',
@@ -9,7 +8,7 @@ var createDefaultMilestoneDoc = function(storyId){
         beginSubmit: 'never',
         endSubmit: 'never'
     }});*/
-    
+
     Milestones.insert({
         storyId: storyId,
         beginVote: 'never',
@@ -17,11 +16,11 @@ var createDefaultMilestoneDoc = function(storyId){
         beginSubmit: 'never',
         endSubmit: 'never'
     });
-}
+};
 
-var updateMilestones = function(storyId, milestoneDoc){
+ updateMilestones = function(storyId, milestoneDoc){
     //first take care of local events
-    
+
     //then update database
     Milestones.update({storyId:storyId},
     {$set: {
@@ -30,7 +29,4 @@ var updateMilestones = function(storyId, milestoneDoc){
         beginSubmit: milestoneDoc.beginSubmit,
         endSubmit: milestoneDoc.endSubmit
     }});
-}
-
-
-
+};
